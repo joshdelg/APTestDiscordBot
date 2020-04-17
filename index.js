@@ -70,36 +70,36 @@ function parseCommand(command) {
   }
 }
 
-// On bot join
-let defaultChannel = "";
-guild.channels.forEach((channel) => {
-  if(channel.type == "text" && defaultChannel == "") {
-    if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
-      defaultChannel = channel;
-    }
-  }
-})
-//defaultChannel will be the channel object that it first finds the bot has permissions for
-defaultChannel.send(`Hello, I'm AP Countdown Bot, here to bring you to your scheduled days of suffering! :alien:`, {
-  embed:{
-    title: ':x: Prefix',
-    color: 0x2471a3, 
-    description: "The prefix for all my commands is \'apbot!\', e.g: \'apbot! timeUntil\'.",
-    fields:[
-        {
-            name: ':tada: Commands',
-            value: 'Only one command so far :( apbot! timeUntil'
-        },
-        {
-            name: 'apBot! timeUntil <className>',
-            value: 'Tells the date, date of the exam, and time until the exam for that class.'
-        }
-    ],
-    footer: {
-        text: 'Bot in early stages of development...'
-    }
-  }
-});
+// // On bot join
+// let defaultChannel = "";
+// guild.channels.forEach((channel) => {
+//   if(channel.type == "text" && defaultChannel == "") {
+//     if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
+//       defaultChannel = channel;
+//     }
+//   }
+// })
+// //defaultChannel will be the channel object that it first finds the bot has permissions for
+// defaultChannel.send(`Hello, I'm AP Countdown Bot, here to bring you to your scheduled days of suffering! :alien:`, {
+//   embed:{
+//     title: ':x: Prefix',
+//     color: 0x2471a3, 
+//     description: "The prefix for all my commands is \'apbot!\', e.g: \'apbot! timeUntil\'.",
+//     fields:[
+//         {
+//             name: ':tada: Commands',
+//             value: 'Only one command so far :( apbot! timeUntil'
+//         },
+//         {
+//             name: 'apBot! timeUntil <className>',
+//             value: 'Tells the date, date of the exam, and time until the exam for that class.'
+//         }
+//     ],
+//     footer: {
+//         text: 'Bot in early stages of development...'
+//     }
+//   }
+// });
 
 client.on('ready', () => {
   console.log(`Logged in as  ${client.user.tag}!`);
